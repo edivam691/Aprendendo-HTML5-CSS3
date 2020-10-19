@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../_css/estilo.css" />
+
+    <script src="/socket.io/socket.io.js"></script>
+    <style>
+        #titulo {
+            margin-bottom: 15px;
+        }
+
+        .clientes {
+            border: #606060 solid 1px;
+            font-size: 25px;
+            border-spacing: 0px;
+            margin-top: 90px;
+            text-align-last: center;
+            margin-left: 173px;
+        }
+
+        td {
+            border: #606060 solid 1px;
+        }
+
+        #rodape {
+            margin-top: 140px;
+        }
+
+        #home {
+            position: absolute;
+            margin-top: 50px;
+            margin-left: 474px;
+            font-size: 23px;
+        }
+
+        p{
+            text-align: justify;
+        }
+    </style>
+    <title>Tudo sobre google Glass</title>
+</head>
+
+<body>
+    <table class="clientes">
+        <caption id="titulo">Dados do cliente</caption>
+        <tr>
+            <td>Nome</td>
+            <td class="td"></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td class="td"></td>
+        </tr>
+        <tr>
+            <td>Data de nascimento</td>
+            <td class="td"></td>
+        </tr>
+        <tr>
+            <td>sexo</td>
+            <td class="td"></td>
+        </tr>
+        <tr>
+            <td>Rua</td>
+            <td class="td"></td>
+        </tr>
+        <tr>
+            <td>Nº</td>
+            <td class="td"></td>
+        </tr>
+        <tr>
+            <td>Cidade</td>
+            <td class="td"></td>
+        </tr>
+        <tr>
+            <td>estado</td>
+            <td class="td"></td>
+        </tr>
+    </table>
+    <a href="../_textos/index-txt.html" id="home">HOME</a>
+    <p>* Caso a tabela acima esteja vázia tente novamente.</p>
+    <footer id="rodape">
+        <p>Copyright 2020 - by Edivam Tavares<br />
+            <a href="http://Facebook.com/cursoemvideo" target="_blank">Facebook</a>
+
+            | <a href="https://twitter.com/cursosemvideo" target="_blank">Twitter</a></p>
+    </footer>
+</body>
+
+<script>
+    const socket = io();
+
+    socket.on('dadosCliente', (dadosCliente) => {
+
+        const dadosClientes = dadosCliente;
+
+        const lista = document.getElementsByClassName('td');
+
+        lista[0].innerHTML = `${dadosClientes.nome}`;
+
+        lista[1].innerHTML = `${dadosClientes.email}`;
+
+        lista[2].innerHTML = `${dadosClientes.data}`;
+
+        lista[3].innerHTML = `${dadosClientes.sexo}`;
+
+        lista[4].innerHTML = `${dadosClientes.logradouro}`;
+
+        lista[5].innerHTML = `${dadosClientes.numero}`;
+
+        lista[6].innerHTML = `${dadosClientes.cidade}`;
+
+        lista[7].innerHTML = `${dadosClientes.estado}`;
+    });
+
+</script>
+
+</html>

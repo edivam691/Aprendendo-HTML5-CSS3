@@ -1,0 +1,151 @@
+
+<!DOCTYPE html/>
+<HTML lang="pt-br">
+    
+<head>           
+    <meta charset="utf-8"/>
+
+    <title>Tudo sobre google Glass</title>
+
+    <link rel="stylesheet" href="../_css/estilo.css"/> 
+    
+    <link rel="stylesheet" href="../_css/form.css"/>
+
+
+</head>
+
+<script src="../_javascript/funcoes.js"></script>
+
+<body>
+    <div id="interface">
+
+    <header id="cabecalho">
+
+    <hgroup>  
+    <h1>Google Glass</h1>
+   <h2> A revolução do Google está chegando</h2>
+    </hgroup>
+
+    <img id="incone" src="../_imagens/contato.png"/>
+
+    <nav id="menu">
+    <h1>Menu Principal</h1>
+    <ul>
+        <li onmousemove="mudaFoto('../_imagens/home.png')" onmouseout="mudaFoto('../_imagens/contato.png')"><a href="../_textos/index-txt.html">Home</a></li>
+
+        <li onmousemove="mudaFoto('../_imagens/especificacoes.png')" onmouseout="mudaFoto('../_imagens/contato.png')" ><a href="../_textos/specs-txt.html">Especificações</a></li> 
+
+        <li onmousemove="mudaFoto('../_imagens/fotos.png')" onmouseout="mudaFoto('../_imagens/contato.png')"><a href="../_textos/fotos-txt.html">Fotos</a></li>
+
+        <li onmousemove="mudaFoto('../_imagens/multimidia.png')" onmouseout="mudaFoto('../_imagens/contato.png')"><a href="../_textos/multimidia-txt.html">Multimídia</a></li>   
+
+        <li  onmousemove="mudaFoto('../_imagens/contato.png')" onmouseout="mudaFoto('../_imagens/contato.png')"><a href="../_textos/fale-conosco-txt.html">Fale conosco</a></li>
+    </ul>
+    </nav>
+
+    </header>
+
+ <section id="corpo-full">
+
+    <article id="noticiaPrincipal">
+    
+        <header id="cabecalho-artigo">
+            <hgroup>
+            <h3 class="topo">Fale Conosco > Contato</h3>
+            <h1>Formulário de Contato </h1>
+            <h2> por Edivam Tavares</h2>
+            <h3 class="direita">Atualizado em 11/outubro/2020</h3>
+            </hgroup>
+        </header>
+
+    <form action="/form_contato" method="POST" id="f_contato" oninput="calcTotal();">
+
+<fieldset id="usuario"><legend>Identificação do Usuário</legend>
+
+    <p><label for="c_nome">Nome:</label> <input type="text" name="t_nome" id="c_nome" size="20" maxlength="30" placeholder="Nome completo" required/></p>
+
+    <p><label for="c_senha">Senha:</label> <input type="password" name="t_senha" id="c_senha" size="10" maxlength="10" placeholder="10 Dígitos" required/></p>
+
+    <p><label for="c_email">E-mail:</label> <input type="email" name="t_email" id="c_email" size="15" maxlength="50" placeholder="Email" required/></p>
+
+   <fieldset id="sexo"><legend>Sexo:</legend>
+        <input type="radio" name="sexo" value="M" id="c_masculino" checked/><label for="c_masculino">Masculino</label><br/>
+
+        <input type="radio" name="sexo" value="F" id="c_feminino"/><label for="c_feminino"> Feminino</label>
+   </fieldset>
+
+    <p><label for="c_nasc">Data de Nascimento:</label><input type="date" name="d_nasc" id="c_nasc" required/></p>
+</fieldset>
+
+<fieldset id="endereco"><legend>Endereço do Usuário</legend>
+
+    <p><label for="c_lograd">Logradouro:</label><input type="text" name="t_lograd" id="c_lograd" size="20" maxlength="40" placeholder=" Rua, Av, Trav." required/></p>
+
+    <p><label for="c_num">Número:</label><input type="number" name="t_num" id="c_num" min="0" max="9999" required/></p>
+
+    <p><label for="c_estd">Estado:</label><select name="t_estd" id="c_estd">
+        <optgroup label="Região Nordeste">
+            <option value="Pernambuco">Pernambuco</option>
+            <option value="Bahia"> Bahia</option>
+            <option value="Ceará"> Ceará</option>
+            <option value="Paraiba">Paraiba</option>
+            <option value="Sergipe">Sergipe</option>
+        </optgroup>
+        <optgroup label="Região Sudeste">
+            <option value="São Paulo" selected>São paulo</option>
+            <option value="Rio de Janeiro">Rio de janeiro</option>
+            <option value="Minas Gerais">Minas gerais</option>
+            <option value="Espirito Santo">Espirito Santo</option>
+        </optgroup>
+    </select></p>
+
+    <p><label for="c_cidade">Cidade:</label><input type="text" name="t_cidade" id="c_cidade" size="20" placeholder="Sua Cidade" list="cidades" required/></p>
+
+    <datalist id="cidades">
+        <option value="Camaragibe"></option>
+        <option value="Recife"></option>
+        <option value="Jaboatão"></option>
+        <option value="Paulista"></option>
+    </datalist>
+
+</fieldset>
+
+<fieldset id="mensagem"><legend>Mensagem do Usuário</legend>
+
+    <p><label for="c_grau">Grau de Urgência: Min</label><input type="range" name="t_grau" id="c_grau" min="0" max="10" step="2"/>Max</p>
+
+    <p><label for="c_mens">Mensagem:</label><textarea name="t_mens" id="c_mens" cols="30" rows="5"placeholder="Deixer aqui a sua mensagem!"></textarea></p>
+</fieldset>
+
+<fieldset id="pedido"><legend>Quero um Google Glass</legend>
+
+   <p><input type="checkbox" name="t_opcao" id="c_opcao" checked/><label for="c_opcao"> Gostaria de adquirir um Google Glass quando disponível.</label></p>  
+
+    <p><label for="c_cor">Cor:</label><input type="color" name="t_cor" id="c_cor" value="#0000ff"/></p>
+
+    <p><label for="c_quant">Quantidade:</label><input type="number" name="t_quant" id="c_quant" min="0" max="5" placeholder="quantidade"/></p>
+
+    <p><label for="c_preco">Preço Total: R$</label><input type="text" name="t_preco" id="c_preco" size="8" maxlength="8" placeholder="Valor Total" readonly/></p>
+</fieldset>
+
+<input type="image" name="t_enviar" src="../_imagens/botao-enviar.png"/>
+
+<a href="/_textos/validar_senha" id="link">Consulte seus dados</a>
+
+</form>
+
+</article>
+
+</section>
+
+<footer id="rodape">
+
+    <p>Copyright 2020 - by Edivam Tavares<br/>
+    <a href="http://Facebook.com/cursoemvideo"target="_blank">Facebook</a> 
+    
+    | <a href="https://twitter.com/cursosemvideo"target="_blank">Twitter</a></p>
+
+    </footer>
+    </div>
+</body>
+</html>

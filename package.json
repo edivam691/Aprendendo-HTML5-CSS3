@@ -1,0 +1,22 @@
+{
+  "name": "projeto-glass-html5",
+  "version": "1.0.0",
+  "description": "ligando banco de dados ao projeto-glass-html5",
+  "main": "glass_app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1","start"
+  :"node glass_app.js"},
+  "keywords": [
+    "express"
+  ],
+  "author": "edivam",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "mongoose": "^5.10.9",
+    "socket.io": "^2.3.0"
+  }
+}

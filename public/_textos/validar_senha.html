@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../_css/estilo.css" />
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <style>
+        p {
+            position: absolute;
+            margin-top: 300px;
+            margin-left: 240px;
+            font-size: 32px;
+        }
+
+        input#c_senha {
+            font-size: 21px;
+        }
+
+        #b_senha {
+            position: absolute;
+            margin-top: 308px;
+            margin-left: 645px;
+            font-size: 20px;
+        }
+
+        #home {
+            position: absolute;
+            margin-top: 165px;
+            margin-left: 474px;
+            font-size: 23px;
+        }
+    </style>
+    <title>Tudo sobre google Glass</title>
+</head>
+
+<body>
+    <form action="/_textos/listar_dados" method="POST">
+        <p><label for="c_senha">Digitar Senha </label><input type="password" name="t_senha" id="c_senha" size="10"
+                maxlength="10" placeholder="Max - 10 Dígitos" required /></p>
+        <input type="submit" name="senha" id="b_senha" />
+    </form>
+    <a href="../_textos/index-txt.html" id="home">HOME</a>
+</body>
+<script>
+    const socket = io();
+
+    socket.on('senhaInvalida', (senha) => {
+        const senhaInvalida = senha;
+        if (!senha) {
+
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Senha inválida tente novamente!'
+            })
+        }
+    })
+</script>
+
+</html>
