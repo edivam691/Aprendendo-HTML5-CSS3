@@ -1,3 +1,3 @@
 # Aprendendo-html5-css3
 ## Desenvolvimento projeto de um  site  com curso html5
-## sob orientação do **Professor gustavo guanabara**
+## com o **Professor gustavo guanabara**
