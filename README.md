@@ -11,7 +11,7 @@ Ferramentas utilizadas:
 * JavaScript
 * Visual Studio Code
 * Heroku cloud platform
-* heroku CLI
+* Heroku CLI
 * Atlas cloud mongoDB
 
 Acesse:
